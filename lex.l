@@ -1,3 +1,5 @@
+%x COMMENT
+
 %{
 #include "grammar.tab.h"
 %}
@@ -7,6 +9,10 @@
 [ \t\n\r\f\v]
 
 "//".* 
+"/*" { BEGIN(COMMENT); }
+<COMMENT>"*/" { BEGIN(INITIAL); }
+<COMMENT>([^*]|\n)+|.
+<COMMENT><<EOF>> { printf("%d: Unterminated comment.\n", yylineno); exit(-1); }
 
 "const" { return CONST; }
 "int" { return INT; }
