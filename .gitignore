@@ -1,0 +1,4 @@
+grammer.tab.*
+lex.yy.*
+main.c
+out
