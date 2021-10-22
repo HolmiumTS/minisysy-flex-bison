@@ -1,13 +1,6 @@
-FROM ubuntu:latest
-
-RUN apt-get update && \
-  apt-get install -y --no-install-recommends \
-    build-essential flex bison && \
-  rm -rf /var/lib/apk/lists/*
-
-COPY ./ /app/
+FROM gcc:10
 
 WORKDIR /app/
 
-RUN make compiler
+RUN make judgement
 

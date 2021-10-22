@@ -5,3 +5,6 @@ compiler: lex.l grammar.y
 
 test: a.out
 	./a.out < main.c
+
+judgement:
+	cc grammar.tab.c lex.yy.c -lfl
