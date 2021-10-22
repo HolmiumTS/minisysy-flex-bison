@@ -1,4 +1,4 @@
-grammer.tab.*
+grammar.tab.*
 lex.yy.*
 main.c
 out
