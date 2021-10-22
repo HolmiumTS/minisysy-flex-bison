@@ -1,6 +1,7 @@
 FROM gcc:10
 
+COPY ./ /app/
+
 WORKDIR /app/
 
-RUN make judgement
 

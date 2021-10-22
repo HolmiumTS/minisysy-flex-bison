@@ -1,5 +1,6 @@
 %{
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
 %}
 
 %token IDENT NUM
@@ -168,5 +169,5 @@ main(int argc, char **argv) {
 
 int yyerror(char *s) {
     printf("error: %s\n", s);
-    return 0;
+    exit(-1);
 }
